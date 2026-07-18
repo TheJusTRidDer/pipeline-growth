@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipeline Growth — Predictable Revenue for Professional Services Firms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, system-ui, sans-serif; color: #1a1a2e; line-height: 1.6; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-weight: 800; font-size: 1.4rem; color: #1a1a2e; text-decoration: none; }
+        .logo span { color: #2563eb; }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #4a4a6a; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #2563eb; }
+        .nav-cta { background: #2563eb; color: #fff !important; padding: 10px 24px; border-radius: 8px; font-weight: 600; }
+        .nav-cta:hover { background: #1d4ed8 !important; }
+
+        .hero { padding: 100px 24px 80px; text-align: center; max-width: 850px; margin: 0 auto; }
+        .hero-badge { display: inline-block; background: #eef2ff; color: #2563eb; font-weight: 600; font-size: 0.85rem; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.03em; color: #1a1a2e; }
+        .hero h1 span { color: #2563eb; }
+        .hero p { font-size: 1.2rem; color: #5a5a7a; max-width: 650px; margin: 0 auto 32px; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: background 0.2s; display: inline-block; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #f1f5f9; color: #1a1a2e; padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: background 0.2s; display: inline-block; }
+        .btn-secondary:hover { background: #e2e8f0; }
+
+        .logos-section { padding: 60px 24px; text-align: center; }
+        .logos-section p { font-size: 0.85rem; color: #8a8aaa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; }
+        .logo-grid { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; align-items: center; }
+        .logo-grid span { font-weight: 700; color: #b0b0c8; font-size: 1.3rem; opacity: 0.6; }
+
+        .problem-section { background: #f8fafc; padding: 80px 24px; }
+        .problem-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+        .problem-left h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .problem-left p { color: #5a5a7a; margin-bottom: 20px; }
+        .problem-list { list-style: none; }
+        .problem-list li { padding: 10px 0; border-bottom: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 12px; }
+        .problem-list li::before { content: "✕"; color: #ef4444; font-weight: 700; }
+        .problem-right { background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+        .problem-right h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; color: #2563eb; }
+        .solution-list { list-style: none; }
+        .solution-list li { padding: 10px 0; border-bottom: 1px solid #e2e8f0; display: flex; align-items: flex-start; gap: 12px; }
+        .solution-list li::before { content: "✓"; color: #22c55e; font-weight: 700; }
+
+        .how-section { padding: 80px 24px; text-align: center; }
+        .how-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .how-section > p { color: #5a5a7a; max-width: 600px; margin: 0 auto 48px; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto; }
+        .step-card { text-align: left; padding: 32px; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .step-number { font-size: 2.5rem; font-weight: 800; color: #2563eb; opacity: 0.3; line-height: 1; margin-bottom: 12px; }
+        .step-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        .step-card p { color: #5a5a7a; font-size: 0.95rem; }
+
+        .pricing-section { padding: 80px 24px; background: #f8fafc; }
+        .pricing-section h2 { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+        .pricing-section > p { text-align: center; color: #5a5a7a; max-width: 600px; margin: 0 auto 48px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .pricing-card { background: #fff; border-radius: 16px; padding: 40px 32px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; }
+        .pricing-card.featured { border-color: #2563eb; box-shadow: 0 4px 24px rgba(37,99,235,0.12); position: relative; }
+        .pricing-card.featured::before { content: "Most Popular"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #2563eb; color: #fff; font-size: 0.8rem; font-weight: 600; padding: 4px 16px; border-radius: 100px; }
+        .pricing-card h3 { font-size: 1.1rem; font-weight: 600; color: #8a8aaa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .price { font-size: 3rem; font-weight: 800; margin-bottom: 4px; }
+        .price span { font-size: 1rem; font-weight: 400; color: #8a8aaa; }
+        .price-desc { color: #5a5a7a; font-size: 0.9rem; margin-bottom: 24px; }
+        .pricing-features { list-style: none; margin-bottom: 32px; flex: 1; }
+        .pricing-features li { padding: 8px 0; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+        .pricing-features li::before { content: "✓"; color: #22c55e; font-weight: 700; }
+        .pricing-card .btn-primary { text-align: center; }
+        .pricing-card .btn-secondary { text-align: center; }
+
+        .testimonials-section { padding: 80px 24px; }
+        .testimonials-section h2 { text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 48px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+        .testimonial-card { background: #f8fafc; padding: 32px; border-radius: 12px; }
+        .testimonial-card p { font-style: italic; color: #4a4a6a; margin-bottom: 16px; font-size: 0.95rem; }
+        .testimonial-author { font-weight: 600; font-size: 0.9rem; }
+        .testimonial-role { color: #8a8aaa; font-size: 0.85rem; }
+
+        .cta-section { background: #1a1a2e; padding: 80px 24px; text-align: center; }
+        .cta-section h2 { color: #fff; font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+        .cta-section p { color: #a0a0c0; max-width: 550px; margin: 0 auto 32px; font-size: 1.1rem; }
+        .cta-section .btn-primary { background: #2563eb; font-size: 1.1rem; padding: 16px 40px; }
+        .cta-section .btn-primary:hover { background: #3b82f6; }
+
+        footer { padding: 40px 24px; text-align: center; color: #8a8aaa; font-size: 0.85rem; border-top: 1px solid #e2e8f0; }
+        footer a { color: #2563eb; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 24px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo">Pipeline<span>Growth</span></a>
+    <div class="nav-links">
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Results</a>
+        <a href="#contact" class="nav-cta">Book a Call</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-badge">For Professional Services Firms • 5-50 People</div>
+    <h1>Build a <span>Predictable Pipeline</span> in 90 Days</h1>
+    <p>Stop relying on referrals alone. We build systematic outbound engines that fill your pipeline consistently — so you can focus on delivering great work.</p>
+    <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Book a Free Growth Audit</a>
+        <a href="#how" class="btn-secondary">See How It Works</a>
+    </div>
+</section>
+
+<section class="logos-section">
+    <p>Trusted by growing firms across professional services</p>
+    <div class="logo-grid">
+        <span>Consulting</span>
+        <span>Legal</span>
+        <span>Agency</span>
+        <span>Accounting</span>
+        <span>IT Services</span>
+        <span>Architecture</span>
+    </div>
+</section>
+
+<section class="problem-section" id="problem">
+    <div class="problem-grid container">
+        <div class="problem-left">
+            <h2>The Referral Trap</h2>
+            <p>Most professional services firms rely on referrals for 60-80% of their revenue. The problem: referrals cap out. You can only know so many people.</p>
+            <ul class="problem-list">
+                <li>Feast-or-famine revenue cycles</li>
+                <li>No control over your pipeline</li>
+                <li>Slow quarters cost more than you think</li>
+                <li>Hiring a salesperson is expensive and risky</li>
+                <li>Your best people spend time prospecting instead of delivering</li>
+            </ul>
+        </div>
+        <div class="problem-right">
+            <h3>What if you had a system?</h3>
+            <ul class="solution-list">
+                <li>Predictable pipeline every single month</li>
+                <li>Systematic outbound that runs without you</li>
+                <li>50+ ideal prospects entering your funnel monthly</li>
+                <li>Close rates improve with structured follow-up</li>
+                <li>You focus on delivery — we handle the pipeline</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="how-section" id="how">
+    <h2>How It Works</h2>
+    <p>Three phases from diagnosis to predictable revenue.</p>
+    <div class="steps-grid container">
+        <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Diagnose</h3>
+            <p>We audit your current pipeline end-to-end: sources, conversion rates, leak points, and competitive positioning. You get a clear picture of what's working and what's not.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Build</h3>
+            <p>We set up your prospect lists, email sequences, LinkedIn system, and CRM. Your pipeline machine goes live within 14 days.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Grow</h3>
+            <p>We manage and optimize the system weekly. You get consistent meetings, proposals, and new clients — predictable revenue, month after month.</p>
+        </div>
+    </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+    <h2>Simple, Transparent Pricing</h2>
+    <p>Start with an audit. Scale with a retainer. Partner for the long term.</p>
+    <div class="pricing-grid container">
+        <div class="pricing-card">
+            <h3>Growth Audit</h3>
+            <div class="price">$497</div>
+            <div class="price-desc">One-time investment</div>
+            <ul class="pricing-features">
+                <li>Full pipeline analysis</li>
+                <li>Competitive landscape review</li>
+                <li>3 quick wins identified</li>
+                <li>90-day growth roadmap</li>
+                <li>1 follow-up strategy call</li>
+            </ul>
+            <a href="#contact" class="btn-secondary">Book an Audit</a>
+        </div>
+        <div class="pricing-card featured">
+            <h3>Growth Engine</h3>
+            <div class="price">$3,500<span>/mo</span></div>
+            <div class="price-desc">Monthly retainer</div>
+            <ul class="pricing-features">
+                <li>Everything in Growth Audit</li>
+                <li>Bi-weekly strategy calls</li>
+                <li>50+ prospects added monthly</li>
+                <li>Email sequence management</li>
+                <li>LinkedIn content strategy</li>
+                <li>Pipeline dashboard</li>
+                <li>Unlimited async support</li>
+            </ul>
+            <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-card">
+            <h3>Growth Partner</h3>
+            <div class="price">$7,500<span>/mo</span></div>
+            <div class="price-desc">Monthly retainer</div>
+            <ul class="pricing-features">
+                <li>Everything in Growth Engine</li>
+                <li>Weekly strategy calls</li>
+                <li>Full outbound execution</li>
+                <li>Sales training for your team</li>
+                <li>CRM setup & optimization</li>
+                <li>Competitive intelligence monitoring</li>
+                <li>Priority support (same-day)</li>
+            </ul>
+            <a href="#contact" class="btn-secondary">Let's Talk</a>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section" id="testimonials">
+    <h2>Results Our Clients See</h2>
+    <div class="testimonial-grid container">
+        <div class="testimonial-card">
+            <p>"We went from feast-or-famine to $50k/month in predictable revenue within 90 days. The biggest change? We stopped hoping for referrals and started running a system."</p>
+            <div class="testimonial-author">— Managing Partner</div>
+            <div class="testimonial-role">Boutique Strategy Consulting Firm</div>
+        </div>
+        <div class="testimonial-card">
+            <p>"40% more pipeline in 60 days. Three new clients in the first quarter. Having a systematic outbound process changed everything for our firm."</p>
+            <div class="testimonial-author">— CEO</div>
+            <div class="testimonial-role">IT Services Firm, 25 Employees</div>
+        </div>
+        <div class="testimonial-card">
+            <p>"I was spending 15 hours a week prospecting. Now I spend zero. The system runs itself and I focus on delivering for my clients."</p>
+            <div class="testimonial-author">— Founder</div>
+            <div class="testimonial-role">Management Consulting Firm</div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" id="contact">
+    <h2>Ready to Build Your Pipeline?</h2>
+    <p>Book a free 30-minute discovery call. We'll diagnose your current pipeline and show you exactly what's possible.</p>
+    <a href="#" class="btn-primary">Book Your Free Discovery Call</a>
+</section>
+
+<footer>
+    <p>&copy; 2026 Pipeline Growth. All rights reserved. Built for professional services firms that are ready to grow predictably.</p>
+</footer>
+
+</body>
+</html>
