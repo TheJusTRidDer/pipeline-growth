@@ -13,17 +13,18 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 .sidebar{width:220px;background:#1a1a2e;color:#fff;padding:24px 0;flex-shrink:0;position:sticky;top:0;height:100vh;overflow-y:auto}
 .sidebar .logo{padding:0 20px 24px;font-weight:800;font-size:1.1rem;border-bottom:1px solid #2a2a4e}
 .sidebar .logo span{color:#60a5fa}
-.nav-item{display:flex;align-items:center;gap:10px;padding:12px 20px;color:#a0a0c0;cursor:pointer;transition:all .2s;border-left:3px solid transparent}
+.nav-item{display:flex;align-items:center;gap:10px;padding:12px 20px;color:#a0a0c0;cursor:pointer;transition:all .2s;border-left:3px solid transparent;font-size:0.85rem}
 .nav-item:hover{color:#fff;background:#2a2a4e}
 .nav-item.active{color:#fff;background:#2a2a4e;border-left-color:#60a5fa}
-.nav-item svg{width:18px;height:18px;flex-shrink:0}
+.nav-item svg{width:17px;height:17px;flex-shrink:0}
+.nav-divider{height:1px;background:#2a2a4e;margin:8px 20px}
 .main{flex:1;padding:24px;overflow-y:auto;max-height:100vh}
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
 .header h1{font-size:1.5rem;font-weight:700}
-.header-actions{display:flex;gap:12px;align-items:center}
-.search-box{display:flex;align-items:center;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 14px;gap:8px;width:280px}
+.header-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.search-box{display:flex;align-items:center;background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:8px 14px;gap:8px;width:260px}
 .search-box input{border:none;outline:none;font-size:0.9rem;width:100%;background:transparent}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-weight:600;font-size:0.85rem;border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-weight:600;font-size:0.85rem;border:none;cursor:pointer;transition:all .2s;text-decoration:none;font-family:'Inter',sans-serif}
 .btn-primary{background:#2563eb;color:#fff}
 .btn-primary:hover{background:#1d4ed8}
 .btn-sm{padding:5px 12px;font-size:0.8rem}
@@ -32,7 +33,9 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 .btn-danger{background:#ef4444;color:#fff}
 .btn-danger:hover{background:#dc2626}
 .btn-success{background:#22c55e;color:#fff}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.btn-warning{background:#f59e0b;color:#fff}
+.btn-warning:hover{background:#d97706}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:24px}
 .stat-card{background:#fff;border-radius:12px;padding:20px;border:1px solid #e2e8f0}
 .stat-card .label{color:#8a8aaa;font-size:0.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
 .stat-card .value{font-size:1.8rem;font-weight:800;margin-top:4px}
@@ -40,14 +43,16 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 .stat-card .value.blue{color:#2563eb}
 .stat-card .value.purple{color:#8b5cf6}
 .stat-card .value.orange{color:#f59e0b}
+.stat-card .value.red{color:#ef4444}
 .pipeline{display:flex;gap:12px;overflow-x:auto;padding-bottom:16px;min-height:60vh}
-.column{background:#f8fafc;border-radius:12px;padding:12px;min-width:220px;max-width:260px;flex-shrink:0;border:1px solid #e2e8f0;display:flex;flex-direction:column}
+.column{background:#f8fafc;border-radius:12px;padding:12px;min-width:210px;max-width:250px;flex-shrink:0;border:1px solid #e2e8f0;display:flex;flex-direction:column}
 .column-header{font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:.5px;color:#4a4a6a;padding-bottom:10px;border-bottom:1px solid #e2e8f0;margin-bottom:10px;display:flex;justify-content:space-between}
 .column-count{background:#e2e8f0;color:#4a4a6a;padding:1px 8px;border-radius:100px;font-size:0.75rem}
 .card{background:#fff;border-radius:8px;padding:12px;margin-bottom:8px;border:1px solid #e2e8f0;cursor:pointer;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .card:hover{border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,.1)}
 .card .name{font-weight:600;font-size:0.9rem;margin-bottom:4px}
-.card .company{color:#8a8aaa;font-size:0.8rem;margin-bottom:6px}
+.card .company{color:#8a8aaa;font-size:0.8rem;margin-bottom:4px}
+.card .days{font-size:0.7rem;color:#b0b0c8;margin-bottom:4px}
 .card .meta{display:flex;gap:8px;flex-wrap:wrap}
 .card .tag{font-size:0.7rem;padding:2px 8px;border-radius:100px;font-weight:500}
 .tag-value{background:#dcfce7;color:#15803d}
@@ -65,10 +70,10 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 .form-group label{font-size:0.8rem;font-weight:600;color:#4a4a6a}
 .form-group input,.form-group select{font-family:'Inter',sans-serif;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:0.9rem;outline:none;transition:border .2s}
 .form-group input:focus,.form-group select:focus{border-color:#2563eb}
-.form-row{display:flex;gap:12px;margin-top:16px}
-.leads-table{background:#fff;border-radius:12px;border:1px solid #e2e8f0;overflow:hidden}
-.leads-table table{width:100%;border-collapse:collapse}
-.leads-table th{text-align:left;padding:12px 16px;font-size:0.8rem;font-weight:600;color:#8a8aaa;text-transform:uppercase;letter-spacing:.5px;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+.form-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.leads-table{background:#fff;border-radius:12px;border:1px solid #e2e8f0;overflow-x:auto}
+.leads-table table{width:100%;border-collapse:collapse;min-width:700px}
+.leads-table th{text-align:left;padding:12px 16px;font-size:0.8rem;font-weight:600;color:#8a8aaa;text-transform:uppercase;letter-spacing:.5px;background:#f8fafc;border-bottom:1px solid #e2e8f0;white-space:nowrap}
 .leads-table td{padding:10px 16px;font-size:0.9rem;border-bottom:1px solid #f1f5f9}
 .leads-table tr:hover td{background:#f8fafc}
 .leads-table .actions{display:flex;gap:4px}
@@ -76,19 +81,19 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 .leads-table .actions button:hover{color:#2563eb;background:#eef2ff}
 .leads-table .actions button.danger:hover{color:#ef4444;background:#fee2e2}
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:1000}
-.modal{background:#fff;border-radius:16px;padding:32px;width:640px;max-width:90vw;max-height:90vh;overflow-y:auto}
+.modal{background:#fff;border-radius:16px;padding:32px;width:700px;max-width:90vw;max-height:90vh;overflow-y:auto}
 .modal h2{font-size:1.3rem;font-weight:700;margin-bottom:20px}
-.modal-actions{display:flex;gap:12px;margin-top:20px;justify-content:flex-end}
+.modal-actions{display:flex;gap:12px;margin-top:20px;justify-content:flex-end;flex-wrap:wrap}
 .page{display:none}
 .page.active{display:block}
 .empty-state{text-align:center;padding:60px 20px;color:#8a8aaa}
 .empty-state svg{width:48px;height:48px;margin-bottom:16px;opacity:.4}
 .empty-state h3{font-size:1.1rem;font-weight:600;color:#4a4a6a;margin-bottom:8px}
 .empty-state p{font-size:0.9rem}
-.toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:12px 24px;border-radius:8px;font-weight:500;font-size:0.9rem;opacity:0;transform:translateY(20px);transition:all .3s;z-index:2000}
+.toast{position:fixed;bottom:24px;right:24px;background:#1a1a2e;color:#fff;padding:12px 24px;border-radius:8px;font-weight:500;font-size:0.9rem;opacity:0;transform:translateY(20px);transition:all .3s;z-index:2000;max-width:400px}
 .toast.show{opacity:1;transform:translateY(0)}
 .view-controls{display:flex;gap:8px;margin-bottom:16px}
-.view-btn{padding:6px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-weight:500;font-size:0.85rem;color:#4a4a6a;transition:all .2s}
+.view-btn{padding:6px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;font-weight:500;font-size:0.85rem;color:#4a4a6a;transition:all .2s;font-family:'Inter',sans-serif}
 .view-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
 .score-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:100px;font-size:0.7rem;font-weight:700}
 .score-high{background:#dcfce7;color:#15803d}
@@ -98,6 +103,27 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 .email-step{font-size:0.7rem;padding:1px 8px;border-radius:100px;background:#e2e8f0;color:#4a4a6a}
 .email-step.sent{background:#d1fae5;color:#065f46}
 .email-step.waiting{background:#fef3c7;color:#b45309}
+.import-area{border:2px dashed #e2e8f0;border-radius:12px;padding:40px;text-align:center;background:#fff;transition:all .2s}
+.import-area.dragover{border-color:#2563eb;background:#eef2ff}
+.import-area svg{width:40px;height:40px;color:#8a8aaa;margin-bottom:12px}
+.import-area h3{font-weight:600;margin-bottom:8px}
+.import-area p{color:#8a8aaa;font-size:0.9rem}
+.import-area input[type=file]{display:none}
+.import-preview{margin-top:16px}
+.note-item{padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:0.85rem;color:#5a5a7a;display:flex;gap:8px}
+.note-item .note-time{color:#b0b0c8;font-size:0.75rem;white-space:nowrap}
+.email-templates{background:#fff;border-radius:12px;padding:24px;border:1px solid #e2e8f0}
+.email-templates h3{font-size:1rem;font-weight:700;margin-bottom:16px;color:#2563eb}
+.template-card{background:#f8fafc;border-radius:8px;padding:16px;margin-bottom:12px;border:1px solid #e2e8f0}
+.template-card .t-name{font-weight:600;margin-bottom:4px}
+.template-card .t-subject{color:#2563eb;font-size:0.85rem;margin-bottom:4px}
+.template-card .t-preview{color:#8a8aaa;font-size:0.85rem}
+.badge{display:inline-flex;align-items:center;padding:2px 10px;border-radius:100px;font-size:0.75rem;font-weight:600}
+.badge-won{background:#dcfce7;color:#15803d}
+.badge-lost{background:#fee2e2;color:#991b1b}
+.badge-progress{background:#dbeafe;color:#1d4ed8}
+.confirm-box{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:16px;margin-bottom:16px;font-size:0.9rem}
+.confirm-box strong{color:#b45309}
 @media(max-width:768px){.sidebar{width:60px}.sidebar .logo span,.sidebar .nav-item span{display:none}.sidebar .logo{padding:12px;font-size:0}.main{padding:16px}.stats-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
@@ -108,9 +134,14 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 <div class="nav-item active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Dashboard</span></div>
 <div class="nav-item" data-page="pipeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Pipeline</span></div>
 <div class="nav-item" data-page="leads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Leads</span></div>
+<div class="nav-item" data-page="emailseq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Email Seq</span></div>
+<div class="nav-divider"></div>
 <div class="nav-item" data-page="add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span>Add Lead</span></div>
-<div class="nav-item" data-page="export"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Export</span></div>
+<div class="nav-item" data-page="import"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Import</span></div>
+<div class="nav-item" data-page="export"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span>Export</span></div>
+<div class="nav-divider"></div>
 <div class="nav-item" data-page="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span>Guide</span></div>
+<div class="nav-item" data-page="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></div>
 </aside>
 <div class="main">
 
@@ -132,7 +163,23 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 <div class="header"><h1>Leads</h1><div class="header-actions"><div class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;color:#8a8aaa"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" id="leadSearch" placeholder="Search leads..." oninput="renderLeadsTable()"/></div></div></div>
 <div class="view-controls"><button class="view-btn active" onclick="showLeadsView('table')">Table</button><button class="view-btn" onclick="showLeadsView('cards')">Cards</button></div>
 <div class="leads-table" id="leadsTableView"></div>
-<div id="leadsCardsView" style="display:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+<div id="leadsCardsView" style="display:none;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px"></div>
+</div>
+
+<div class="page" id="page-emailseq">
+<div class="header"><h1>Email Sequences</h1></div>
+<div class="email-templates">
+<h3>Cold Email Sequence (7 Emails)</h3>
+<div class="template-card"><div class="t-name">Email 1 — Direct Ask</div><div class="t-subject">Quick question re: [company]</div><div class="t-preview">"Hi [Name], I help professional services firms build predictable pipeline systems..."</div></div>
+<div class="template-card"><div class="t-name">Email 2 — Insight Hook</div><div class="t-subject">Referral math for [company]</div><div class="t-preview">"Quick math: if 70% of your revenue is referral-driven..."</div></div>
+<div class="template-card"><div class="t-name">Email 3 — Case Study</div><div class="t-subject">How [Similar Firm] added 40% more pipeline</div><div class="t-preview">"Here's a real example from a firm similar to yours..."</div></div>
+<div class="template-card"><div class="t-name">Email 4 — Growth Audit Offer</div><div class="t-subject">Free Growth Audit — $497 value</div><div class="t-preview">"I'd like to offer you a full pipeline audit at no cost..."</div></div>
+<div class="template-card"><div class="t-name">Email 5 — Social Proof</div><div class="t-subject">What our clients are saying</div><div class="t-preview">"3 firms we've worked with this quarter saw..."</div></div>
+<div class="template-card"><div class="t-name">Email 6 — Value Add</div><div class="t-subject">Resource: Pipeline Health Scorecard</div><div class="t-preview">"Even if timing isn't right, here's a framework..."</div></div>
+<div class="template-card"><div class="t-name">Email 7 — Breakup</div><div class="t-subject">Closing the loop</div><div class="t-preview">"I'll assume timing isn't right. If things change, here's how to reach me..."</div></div>
+</div>
+<h3 style="margin:24px 0 16px;font-size:1.1rem">Per-Lead Email Status</h3>
+<div class="leads-table" id="emailSeqTable"></div>
 </div>
 
 <div class="page" id="page-add">
@@ -153,12 +200,25 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 <div class="form-group"><label>Stage</label><select id="fStage"><option value="Prospect">Prospect</option><option value="Contacted">Contacted</option><option value="Responded">Responded</option><option value="Discovery Call">Discovery Call</option><option value="Audit in Progress">Audit in Progress</option><option value="Proposal Sent">Proposal Sent</option><option value="Negotiation">Negotiation</option><option value="Closed Won">Closed Won</option><option value="Closed Lost">Closed Lost</option><option value="Nurture">Nurture</option></select></div>
 <div class="form-group"><label>Pipeline Value ($)</label><input id="fValue" type="number" placeholder="0"/></div>
 <div class="form-group"><label>Lead Source</label><select id="fSource"><option value="">Select...</option><option>Referral</option><option>LinkedIn</option><option>Cold Email</option><option>Partner</option><option>Website</option><option>Other</option></select></div>
+<div class="form-group"><label>Notes</label><input id="fNotes" placeholder="Initial notes about this lead"/></div>
 </div>
 <div class="form-row">
 <button class="btn btn-primary" onclick="addLead()">Add Lead</button>
 <button class="btn btn-outline" onclick="clearForm()">Clear</button>
 </div>
 </div>
+</div>
+
+<div class="page" id="page-import">
+<div class="header"><h1>Import Leads</h1></div>
+<div class="import-area" id="dropArea" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event)">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+<h3>Drop CSV file here</h3>
+<p>or <a href="#" onclick="document.getElementById('csvFile').click();return false" style="color:#2563eb">browse files</a></p>
+<input type="file" id="csvFile" accept=".csv" onchange="handleFile(this.files[0])"/>
+<p style="margin-top:12px;font-size:0.85rem;color:#8a8aaa">CSV must have headers: Company, Name, Email, Stage, Value, Score, Industry, Location, Source, Notes</p>
+</div>
+<div id="importPreview"></div>
 </div>
 
 <div class="page" id="page-export">
@@ -172,12 +232,28 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 <div class="page" id="page-guide">
 <div class="header"><h1>Getting Started Guide</h1></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">1. Add Your Leads</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use the <strong>Add Lead</strong> form to enter prospects manually. Fill in company, contact, stage, and value. The more data you add, the better your dashboard insights.</p><p style="margin-top:8px;font-size:0.9rem">→ <a href="#" onclick="navigate('add');return false" style="color:#2563eb">Go to Add Lead</a></p></div>
-<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">2. Move Leads Through Pipeline</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use the <strong>Pipeline</strong> view to see all leads by stage. Click any lead card to edit stage, value, and details as they progress from Prospect → Closed Won.</p><p style="margin-top:8px;font-size:0.9rem">→ <a href="#" onclick="navigate('pipeline');return false" style="color:#2563eb">Go to Pipeline</a></p></div>
-<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">3. Track Email Sequences</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use the <strong>Leads</strong> table to see email step status. Update email steps as you send follow-ups. Use the spreadsheet's Email Sequences sheet for detailed tracking.</p><p style="margin-top:8px;font-size:0.9rem">→ <a href="#" onclick="navigate('leads');return false" style="color:#2563eb">Go to Leads</a></p></div>
-<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">4. Export to Spreadsheet</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use the <strong>Export</strong> page to download your data as CSV. Open in Excel or Google Sheets. The companion spreadsheet has Pipeline Summary, Email Sequences, and Weekly Targets sheets.</p><p style="margin-top:8px;font-size:0.9rem">→ <a href="#" onclick="navigate('export');return false" style="color:#2563eb">Go to Export</a></p></div>
-<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">5. Weekly Review</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Every Friday, check your <strong>Dashboard</strong> metrics. Track: new prospects (target 50+), emails sent (200+), replies (5+), discovery calls booked (2+).</p><p style="margin-top:8px;font-size:0.9rem">→ <a href="#" onclick="navigate('dashboard');return false" style="color:#2563eb">Go to Dashboard</a></p></div>
-<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">6. Open the Spreadsheet</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">The <strong>Pipeline-Growth-Spreadsheet.xlsx</strong> file is in the <code>app/</code> folder. Open it in Excel. It has 5 sheets: Lead Tracker, Pipeline Summary, Email Sequences, Weekly Targets, Monthly Revenue.</p><p style="margin-top:8px;font-size:0.9rem">→ <a href="Pipeline-Growth-Spreadsheet.xlsx" style="color:#2563eb">Download Spreadsheet</a></p></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">1. Add Your Leads</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use <strong>Add Lead</strong> for single entries, or <strong>Import</strong> to bulk upload via CSV.</p><p style="margin-top:8px">→ <a href="#" onclick="navigate('add');return false" style="color:#2563eb">Add Lead</a> · <a href="#" onclick="navigate('import');return false" style="color:#2563eb">Import CSV</a></p></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">2. Move Leads Through Pipeline</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use the <strong>Pipeline</strong> view to see all leads by stage. Click any card to edit details. Track days-in-stage automatically.</p><p style="margin-top:8px">→ <a href="#" onclick="navigate('pipeline');return false" style="color:#2563eb">Go to Pipeline</a></p></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">3. Track Email Sequences</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">The <strong>Email Seq</strong> page shows all 7 email templates and per-lead send status. Update email steps as you send follow-ups.</p><p style="margin-top:8px">→ <a href="#" onclick="navigate('emailseq');return false" style="color:#2563eb">Go to Email Seq</a></p></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">4. Export & Spreadsheet</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Export your data to CSV for Excel/Sheets. The companion spreadsheet has Pipeline Summary, Email Sequences, Weekly Targets, Monthly Revenue.</p><p style="margin-top:8px">→ <a href="#" onclick="navigate('export');return false" style="color:#2563eb">Export</a></p></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">5. Weekly Review</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Check <strong>Dashboard</strong> every Friday. Track: new prospects (50+), emails sent (200+), replies (5+), calls booked (2+).</p><p style="margin-top:8px">→ <a href="#" onclick="navigate('dashboard');return false" style="color:#2563eb">Go to Dashboard</a></p></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px;color:#2563eb">6. Settings & Data Mgmt</h3><p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Use the <strong>Settings</strong> page to reset data, reload demo leads, or clear your activity log.</p><p style="margin-top:8px">→ <a href="#" onclick="navigate('settings');return false" style="color:#2563eb">Go to Settings</a></p></div>
+</div>
+</div>
+
+<div class="page" id="page-settings">
+<div class="header"><h1>Settings</h1></div>
+<div style="max-width:600px">
+<div class="stat-card" style="margin-bottom:16px"><h3 style="font-size:1rem;margin-bottom:12px">Data Management</h3>
+<p style="color:#5a5a7a;font-size:0.9rem;margin-bottom:16px"><strong>Total leads:</strong> <span id="leadCount">0</span> · <strong>Activity entries:</strong> <span id="activityCount">0</span></p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn btn-outline" onclick="reloadDemoData()">Reload Demo Data</button>
+<button class="btn btn-warning" onclick="if(confirm('Clear all activity log entries?')){activityLog=[];save();showToast('Activity log cleared');renderDashboard()}">Clear Activity Log</button>
+<button class="btn btn-danger" onclick="if(confirm('Delete ALL leads? This cannot be undone.')){leads=[];save();log('All leads deleted');showToast('All leads deleted');renderAll()}">Delete All Leads</button>
+<button class="btn btn-outline" onclick="if(confirm('Reset everything (leads + activity)?')){localStorage.removeItem('pgLeads');localStorage.removeItem('pgActivity');location.reload()}">Factory Reset</button>
+</div></div>
+<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:12px">About</h3>
+<p style="color:#5a5a7a;font-size:0.9rem;line-height:1.6">Pipeline Growth CRM v1.0<br/>Data is stored in your browser (localStorage).<br/>Export your data regularly to avoid loss.<br/><br/><a href="https://github.com/TheJusTRidDer/pipeline-growth" target="_blank" style="color:#2563eb">View on GitHub</a></p></div>
 </div>
 </div>
 
@@ -191,21 +267,62 @@ body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1a1a2e;font-size:1
 
 <script>
 const STAGES = ['Prospect','Contacted','Responded','Discovery Call','Audit in Progress','Proposal Sent','Negotiation','Closed Won','Closed Lost','Nurture'];
+const EMAIL_TEMPLATES = [
+'Email 1 — Direct Ask',
+'Email 2 — Insight Hook',
+'Email 3 — Case Study',
+'Email 4 — Growth Audit Offer',
+'Email 5 — Social Proof',
+'Email 6 — Value Add',
+'Email 7 — Breakup'
+];
 
 let leads = JSON.parse(localStorage.getItem('pgLeads')||'null');
 let activityLog = JSON.parse(localStorage.getItem('pgActivity')||'null');
-if(!leads){const now=new Date().toISOString();const d=(n,c,s,v,sc)=>sc=Date.now()+Math.random()*1000|0;const seed=[{id:1001,company:'Cognosis Consulting',name:'Peter Smith',title:'CEO',email:'peter@cognosis.co.uk',linkedin:'linkedin.com/in/petersmith',industry:'Growth Strategy Consulting',employees:40,revenue:'$5M - $10M',location:'London, UK',score:9,stage:'Discovery Call',value:42000,source:'LinkedIn',website:'cognosis.co.uk',emailStepNum:3,emailStep:'sent',createdAt:now,updatedAt:now},{id:1002,company:'Magnus Consulting',name:'Sarah Chen',title:'Managing Director',email:'sarah@magnusconsulting.co.uk',linkedin:'linkedin.com/in/sarachen',industry:'B2B Growth Consulting',employees:28,revenue:'$1M - $5M',location:'Manchester, UK',score:8,stage:'Responded',value:35000,source:'Referral',website:'magnusconsulting.co.uk',emailStepNum:2,emailStep:'sent',createdAt:now,updatedAt:now},{id:1003,company:'Meraki People',name:'Kate Smyth',title:'Founder & Principal',email:'kate@merakipeople.co.uk',linkedin:'linkedin.com/in/katesmyth',industry:'Board Advisory',employees:12,revenue:'$1M - $5M',location:'London, UK',score:7,stage:'Prospect',value:24000,source:'Cold Email',website:'merakipeople.co.uk',emailStepNum:0,emailStep:'waiting',createdAt:now,updatedAt:now},{id:1004,company:'THRIVE Consulting',name:'Eliette Krakora',title:'Founder & CEO',email:'eliette@thrive-co.com',linkedin:'linkedin.com/in/eliettekrakora',industry:'Healthcare Strategy',employees:4,revenue:'$1M - $5M',location:'Los Angeles, CA',score:6,stage:'Prospect',value:18000,source:'LinkedIn',website:'thrive-co.com',emailStepNum:0,emailStep:'waiting',createdAt:now,updatedAt:now},{id:1005,company:'Rhodes Perry Consulting',name:'Rhodes Perry',title:'Founder & CEO',email:'rhodes@rhodesperryconsulting.com',linkedin:'linkedin.com/in/rhodesperry',industry:'DEI Consulting',employees:1,revenue:'$1M - $5M',location:'Portland, OR',score:5,stage:'Prospect',value:12000,source:'Cold Email',website:'rhodesperryconsulting.com',emailStepNum:0,emailStep:'waiting',createdAt:now,updatedAt:now},{id:1006,company:'Yeager Marketing',name:'Renee Yeager',title:'CEO & Co-Founder',email:'renee@yeagermarketing.com',linkedin:'linkedin.com/in/reneeyeager',industry:'B2B Tech Marketing',employees:11,revenue:'$1M - $5M',location:'Scottsdale, AZ',score:8,stage:'Contacted',value:30000,source:'Website',website:'yeagermarketing.com',emailStepNum:1,emailStep:'sent',createdAt:now,updatedAt:now},{id:1007,company:'Mix+Shine Marketing',name:'Rachael Seda',title:'CEO & Co-Founder',email:'rachael@mixshinemarketing.com',linkedin:'linkedin.com/in/rachaelseda',industry:'Growth Marketing',employees:13,revenue:'$1M - $5M',location:'Virginia Beach, VA',score:7,stage:'Contacted',value:28000,source:'LinkedIn',website:'mixshinemarketing.com',emailStepNum:1,emailStep:'sent',createdAt:now,updatedAt:now},{id:1008,company:'Disruptive Digital',name:'Maurice Rahmey',title:'CEO',email:'maurice@disruptivedigital.com',linkedin:'linkedin.com/in/mauricerahmey',industry:'Performance Marketing',employees:15,revenue:'$5M - $10M',location:'New York, NY',score:6,stage:'Audit in Progress',value:55000,source:'Partner',website:'disruptivedigital.com',emailStepNum:4,emailStep:'sent',createdAt:now,updatedAt:now},{id:1009,company:'qb. consulting',name:'Sam Hartsock',title:'Strategy Lead',email:'sam@consultqb.com',linkedin:'linkedin.com/in/samhartsock',industry:'ESG Strategy Consulting',employees:5,revenue:'$1M - $5M',location:'Austin, TX',score:7,stage:'Proposal Sent',value:36000,source:'Cold Email',website:'consultqb.com',emailStepNum:4,emailStep:'sent',createdAt:now,updatedAt:now},{id:1010,company:'Vitreum Consulting',name:'Debi Wilson',title:'Founder & Director',email:'debi@vitreumconsulting.co.uk',linkedin:'linkedin.com/in/debiwilson',industry:'HR & Operations Consulting',employees:6,revenue:'$1M - $5M',location:'Birmingham, UK',score:5,stage:'Nurture',value:15000,source:'Referral',website:'vitreumconsultingltd.co.uk',emailStepNum:2,emailStep:'sent',createdAt:now,updatedAt:now},{id:1011,company:'Velocity Consulting',name:'James Mitchell',title:'Managing Partner',email:'james@velocityconsult.com',linkedin:'linkedin.com/in/jamesmitchell',industry:'Management Consulting',employees:35,revenue:'$5M - $10M',location:'Chicago, IL',score:9,stage:'Negotiation',value:72000,source:'Referral',website:'velocityconsult.com',emailStepNum:5,emailStep:'sent',createdAt:now,updatedAt:now},{id:1012,company:'Summit Strategy',name:'Lisa Park',title:'CEO',email:'lisa@summitstrategy.io',linkedin:'linkedin.com/in/lisapark',industry:'Strategy Consulting',employees:22,revenue:'$5M - $10M',location:'San Francisco, CA',score:8,stage:'Discovery Call',value:48000,source:'LinkedIn',website:'summitstrategy.io',emailStepNum:2,emailStep:'sent',createdAt:now,updatedAt:now}];leads=seed;activityLog=[{msg:'Seeded CRM with 12 sample leads',time:new Date(Date.now()-300000).toISOString()},{msg:'Pipeline Growth CRM started',time:new Date(Date.now()-600000).toISOString()}];save();}
+if(!leads){
+const now=new Date().toISOString();
+const seed=[
+{id:1001,company:'Cognosis Consulting',name:'Peter Smith',title:'CEO',email:'peter@cognosis.co.uk',linkedin:'linkedin.com/in/petersmith',industry:'Growth Strategy Consulting',employees:40,revenue:'$5M - $10M',location:'London, UK',score:9,stage:'Discovery Call',value:42000,source:'LinkedIn',website:'cognosis.co.uk',emailStepNum:3,emailStep:'sent',notes:'Met at conference. Very interested in pipeline audit.',createdAt:now,updatedAt:now},
+{id:1002,company:'Magnus Consulting',name:'Sarah Chen',title:'Managing Director',email:'sarah@magnusconsulting.co.uk',linkedin:'linkedin.com/in/sarachen',industry:'B2B Growth Consulting',employees:28,revenue:'$1M - $5M',location:'Manchester, UK',score:8,stage:'Responded',value:35000,source:'Referral',website:'magnusconsulting.co.uk',emailStepNum:2,emailStep:'sent',notes:'Referred by John at Velocity. Interested in Growth Engine.',createdAt:now,updatedAt:now},
+{id:1003,company:'Meraki People',name:'Kate Smyth',title:'Founder & Principal',email:'kate@merakipeople.co.uk',linkedin:'linkedin.com/in/katesmyth',industry:'Board Advisory',employees:12,revenue:'$1M - $5M',location:'London, UK',score:7,stage:'Prospect',value:24000,source:'Cold Email',website:'merakipeople.co.uk',emailStepNum:0,emailStep:'waiting',notes:'Good ICP fit. Founder-led firm, 12 employees.',createdAt:now,updatedAt:now},
+{id:1004,company:'THRIVE Consulting',name:'Eliette Krakora',title:'Founder & CEO',email:'eliette@thrive-co.com',linkedin:'linkedin.com/in/eliettekrakora',industry:'Healthcare Strategy',employees:4,revenue:'$1M - $5M',location:'Los Angeles, CA',score:6,stage:'Prospect',value:18000,source:'LinkedIn',website:'thrive-co.com',emailStepNum:0,emailStep:'waiting',notes:'Small team but high-value clients (biopharma).',createdAt:now,updatedAt:now},
+{id:1005,company:'Rhodes Perry Consulting',name:'Rhodes Perry',title:'Founder & CEO',email:'rhodes@rhodesperryconsulting.com',linkedin:'linkedin.com/in/rhodesperry',industry:'DEI Consulting',employees:1,revenue:'$1M - $5M',location:'Portland, OR',score:5,stage:'Prospect',value:12000,source:'Cold Email',website:'rhodesperryconsulting.com',emailStepNum:0,emailStep:'waiting',notes:'20 subcontractors. Podcast host — good authority.',createdAt:now,updatedAt:now},
+{id:1006,company:'Yeager Marketing',name:'Renee Yeager',title:'CEO & Co-Founder',email:'renee@yeagermarketing.com',linkedin:'linkedin.com/in/reneeyeager',industry:'B2B Tech Marketing',employees:11,revenue:'$1M - $5M',location:'Scottsdale, AZ',score:8,stage:'Contacted',value:30000,source:'Website',website:'yeagermarketing.com',emailStepNum:1,emailStep:'sent',notes:'Filled out website form. $3.8M revenue, growing 18%.',createdAt:now,updatedAt:now},
+{id:1007,company:'Mix+Shine Marketing',name:'Rachael Seda',title:'CEO & Co-Founder',email:'rachael@mixshinemarketing.com',linkedin:'linkedin.com/in/rachaelseda',industry:'Growth Marketing',employees:13,revenue:'$1M - $5M',location:'Virginia Beach, VA',score:7,stage:'Contacted',value:28000,source:'LinkedIn',website:'mixshinemarketing.com',emailStepNum:1,emailStep:'sent',notes:'Growing 44% YoY. Agency owner, good ICP.',createdAt:now,updatedAt:now},
+{id:1008,company:'Disruptive Digital',name:'Maurice Rahmey',title:'CEO',email:'maurice@disruptivedigital.com',linkedin:'linkedin.com/in/mauricerahmey',industry:'Performance Marketing',employees:15,revenue:'$5M - $10M',location:'New York, NY',score:6,stage:'Audit in Progress',value:55000,source:'Partner',website:'disruptivedigital.com',emailStepNum:4,emailStep:'sent',notes:'Ex-Facebook. Top Meta agency partner. Audit delivered.',createdAt:now,updatedAt:now},
+{id:1009,company:'qb. consulting',name:'Sam Hartsock',title:'Strategy Lead',email:'sam@consultqb.com',linkedin:'linkedin.com/in/samhartsock',industry:'ESG Strategy Consulting',employees:5,revenue:'$1M - $5M',location:'Austin, TX',score:7,stage:'Proposal Sent',value:36000,source:'Cold Email',website:'consultqb.com',emailStepNum:4,emailStep:'sent',notes:'ESG boutique. Sent proposal for Growth Engine.',createdAt:now,updatedAt:now},
+{id:1010,company:'Vitreum Consulting',name:'Debi Wilson',title:'Founder & Director',email:'debi@vitreumconsulting.co.uk',linkedin:'linkedin.com/in/debiwilson',industry:'HR & Operations Consulting',employees:6,revenue:'$1M - $5M',location:'Birmingham, UK',score:5,stage:'Nurture',value:15000,source:'Referral',website:'vitreumconsultingltd.co.uk',emailStepNum:2,emailStep:'sent',notes:'Big Four background. Nurture — re-engage in 90 days.',createdAt:now,updatedAt:now},
+{id:1011,company:'Velocity Consulting',name:'James Mitchell',title:'Managing Partner',email:'james@velocityconsult.com',linkedin:'linkedin.com/in/jamesmitchell',industry:'Management Consulting',employees:35,revenue:'$5M - $10M',location:'Chicago, IL',score:9,stage:'Negotiation',value:72000,source:'Referral',website:'velocityconsult.com',emailStepNum:5,emailStep:'sent',notes:'Hot lead. Referred by mutual connection. Negotiating Growth Partner retainer.',createdAt:now,updatedAt:now},
+{id:1012,company:'Summit Strategy',name:'Lisa Park',title:'CEO',email:'lisa@summitstrategy.io',linkedin:'linkedin.com/in/lisapark',industry:'Strategy Consulting',employees:22,revenue:'$5M - $10M',location:'San Francisco, CA',score:8,stage:'Discovery Call',value:48000,source:'LinkedIn',website:'summitstrategy.io',emailStepNum:2,emailStep:'sent',notes:'Call scheduled for next week. Good chemistry.',createdAt:now,updatedAt:now}
+];
+leads=seed;
+activityLog=[{msg:'Seeded CRM with 12 sample leads',time:new Date(Date.now()-300000).toISOString()},{msg:'Pipeline Growth CRM started',time:new Date(Date.now()-600000).toISOString()}];
+save();
+}
 
 function save(){localStorage.setItem('pgLeads',JSON.stringify(leads));localStorage.setItem('pgActivity',JSON.stringify(activityLog));}
 
-function log(msg){activityLog.unshift({msg,time:new Date().toISOString()});if(activityLog.length>50)activityLog.length=50;save();}
+function log(msg){activityLog.unshift({msg,time:new Date().toISOString()});if(activityLog.length>200)activityLog.length=200;save();}
 
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
 
-function getStageIndex(s){return STAGES.indexOf(s);}
+function daysSince(d){return Math.floor((Date.now()-new Date(d).getTime())/(86400000))}
 
-function navigate(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+page).classList.add('active');document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.querySelector(`.nav-item[data-page="${page}"]`).classList.add('active');if(page==='dashboard')renderDashboard();if(page==='pipeline')renderPipeline();if(page==='leads')renderLeadsTable();}
+function navigate(page){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('page-'+page).classList.add('active');
+document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+const navItem=document.querySelector(`.nav-item[data-page="${page}"]`);
+if(navItem)navItem.classList.add('active');
+if(page==='dashboard')renderDashboard();
+if(page==='pipeline')renderPipeline();
+if(page==='leads')renderLeadsTable();
+if(page==='emailseq')renderEmailSeq();
+if(page==='settings'){document.getElementById('leadCount').textContent=leads.length;document.getElementById('activityCount').textContent=activityLog.length;}
+}
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>navigate(n.dataset.page)));
+
+function renderAll(){renderDashboard();renderPipeline();renderLeadsTable();}
 
 function renderDashboard(){
 const total=leads.length;
@@ -218,21 +335,25 @@ const proposals=leads.filter(l=>l.stage==='Proposal Sent').length;
 const contacted=leads.filter(l=>l.stage==='Contacted'||l.stage==='Responded').length;
 const monthAgo=new Date();monthAgo.setDate(monthAgo.getDate()-30);
 const recentWon=won.filter(l=>new Date(l.updatedAt)>=monthAgo);
+const avgDeal=won.length?Math.round(wonVal/won.length):0;
+const lost=leads.filter(l=>l.stage==='Closed Lost').length;
 document.getElementById('statsGrid').innerHTML=`
 <div class="stat-card"><div class="label">Total Leads</div><div class="value blue">${total}</div></div>
 <div class="stat-card"><div class="label">Pipeline Value</div><div class="value purple">$${pipeVal.toLocaleString()}</div></div>
 <div class="stat-card"><div class="label">Closed Won (30d)</div><div class="value green">${recentWon.length} ($${recentWon.reduce((s,l)=>s+(+l.value||0),0).toLocaleString()})</div></div>
+<div class="stat-card"><div class="label">Avg Deal Size</div><div class="value purple">$${avgDeal.toLocaleString()}</div></div>
 <div class="stat-card"><div class="label">Discovery Calls</div><div class="value orange">${calls}</div></div>
 <div class="stat-card"><div class="label">Proposals Out</div><div class="value purple">${proposals}</div></div>
-<div class="stat-card"><div class="label">Contacted</div><div class="value blue">${contacted}</div></div>
 <div class="stat-card"><div class="label">Conversion Rate</div><div class="value green">${total?Math.round(won.length/total*100):0}%</div></div>
 <div class="stat-card"><div class="label">Active Pipeline</div><div class="value orange">${inPipeline.length}</div></div>
+<div class="stat-card"><div class="label">Closed Lost</div><div class="value red">${lost}</div></div>
+<div class="stat-card"><div class="label">Contacted</div><div class="value blue">${contacted}</div></div>
 `;
 const chart=document.getElementById('pipelineChart');
 const maxCount=Math.max(1,...STAGES.map(s=>leads.filter(l=>l.stage===s).length));
 chart.innerHTML=STAGES.map(s=>{const c=leads.filter(l=>l.stage===s).length;const p=Math.round(c/maxCount*160);return`<div style="flex:1;display:flex;flex-direction:column;align-items:center"><div style="width:100%;background:#2563eb;border-radius:4px 4px 0 0;height:${p}px;transition:height .3s;min-height:${c?4:0}px"></div><span style="font-size:0.65rem;color:#8a8aaa;margin-top:4px;writing-mode:vertical-lr;text-orientation:mixed;height:40px;overflow:hidden">${s.split(' ')[0]}</span><span style="font-size:0.75rem;font-weight:600">${c}</span></div>`}).join('');
 const activity=document.getElementById('recentActivity');
-activity.innerHTML=activityLog.slice(0,10).map(a=>`<div style="padding:6px 0;border-bottom:1px solid #f1f5f9">${a.msg} <span style="color:#b0b0c8;font-size:0.75rem">${new Date(a.time).toLocaleDateString()}</span></div>`).join('')||'<div style="color:#b0b0c8;padding:20px 0">No activity yet. Add your first lead!</div>';
+activity.innerHTML=activityLog.slice(0,15).map(a=>`<div style="padding:6px 0;border-bottom:1px solid #f1f5f9;display:flex;justify-content:space-between;gap:8px"><span>${a.msg}</span><span style="color:#b0b0c8;font-size:0.75rem;white-space:nowrap">${new Date(a.time).toLocaleDateString()}</span></div>`).join('')||'<div style="color:#b0b0c8;padding:20px 0">No activity yet. Add your first lead!</div>';
 }
 
 function renderPipeline(){
@@ -243,6 +364,7 @@ return`<div class="column"><div class="column-header"><span>${stage}</span><span
 <div class="card" onclick="openLead(${l.id})">
 <div class="name">${esc(l.name||'Unknown')}</div>
 <div class="company">${esc(l.company||'')}</div>
+<div class="days">${daysSince(l.updatedAt)}d in stage</div>
 <div class="meta">${l.value?`<span class="tag tag-value">$${(+l.value).toLocaleString()}</span>`:''}
 ${l.score?`<span class="score-badge ${+l.score>=7?'score-high':+l.score>=4?'score-mid':'score-low'}">${l.score}</span>`:''}
 </div>
@@ -254,42 +376,62 @@ function renderLeadsTable(){
 const q=(document.getElementById('leadSearch')?.value||'').toLowerCase();
 const filtered=leads.filter(l=>(l.name||'').toLowerCase().includes(q)||(l.company||'').toLowerCase().includes(q)||(l.email||'').toLowerCase().includes(q));
 const table=document.getElementById('leadsTableView');
-table.innerHTML=`<table><thead><tr><th>Name</th><th>Company</th><th>Stage</th><th>Value</th><th>Score</th><th>Email</th><th>Source</th><th></th></tr></thead><tbody>${filtered.map(l=>`
+table.innerHTML=`<table><thead><tr><th>Name</th><th>Company</th><th>Stage</th><th>Value</th><th>Score</th><th>Days</th><th>Email</th><th>Source</th><th></th></tr></thead><tbody>${filtered.map(l=>`
 <tr><td><strong>${esc(l.name||'-')}</strong><br/><span style="font-size:0.8rem;color:#8a8aaa">${esc(l.title||'')}</span></td>
 <td>${esc(l.company||'-')}<br/><span style="font-size:0.8rem;color:#8a8aaa">${esc(l.industry||'')}</span></td>
 <td><span class="tag ${stageTagClass(l.stage)}">${l.stage}</span></td>
 <td>${l.value?`$${(+l.value).toLocaleString()}`:'-'}</td>
 <td>${l.score?`<span class="score-badge ${+l.score>=7?'score-high':+l.score>=4?'score-mid':'score-low'}">${l.score}</span>`:'-'}</td>
-<td><div class="email-cell">${esc(l.email||'-')}<br/>${l.emailStep?`<span class="email-step ${l.emailStep==='sent'?'sent':''}">Email ${l.emailStepNum||1}</span>`:''}</div></td>
+<td style="font-size:0.85rem;color:#8a8aaa">${daysSince(l.updatedAt)}d</td>
+<td><div class="email-cell">${esc(l.email||'-')}<br/>${l.emailStep?`<span class="email-step ${l.emailStep==='sent'?'sent':''}">${EMAIL_TEMPLATES[l.emailStepNum-1]||'Waiting'}</span>`:''}</div></td>
 <td>${esc(l.source||'-')}</td>
 <td class="actions">
 <button onclick="openLead(${l.id})" title="Edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
 <button class="danger" onclick="deleteLead(${l.id})" title="Delete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
 </td></tr>`).join('')}</tbody></table>`;
 if(!filtered.length)table.innerHTML=`<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><h3>No leads found</h3><p>${q?'Try a different search.':'Add your first lead to get started.'}</p></div>`;
+const cards=document.getElementById('leadsCardsView');
+if(cards.style.display==='grid'){
+cards.innerHTML=filtered.map(l=>`
+<div class="card" onclick="openLead(${l.id})" style="padding:16px">
+<div class="name">${esc(l.name||'Unknown')}</div>
+<div class="company">${esc(l.company||'')} · ${esc(l.industry||'')}</div>
+<div class="days">${daysSince(l.updatedAt)}d in · ${l.stage}</div>
+<div class="meta">${l.value?`<span class="tag tag-value">$${(+l.value).toLocaleString()}</span>`:''}
+${l.score?`<span class="score-badge ${+l.score>=7?'score-high':+l.score>=4?'score-mid':'score-low'}">${l.score}</span>`:''}
+<span class="tag ${stageTagClass(l.stage)}">${l.stage}</span>
+</div>
+</div>`).join('')||'<div style="color:#b0b0c8;text-align:center;padding:40px">No leads</div>';
+}
 }
 
-function stageTagClass(s){
-const m={'Prospect':'tag-prospect','Contacted':'tag-contacted','Responded':'tag-contacted','Discovery Call':'tag-call','Audit in Progress':'tag-call','Proposal Sent':'tag-proposal','Negotiation':'tag-proposal','Closed Won':'tag-closed','Closed Lost':'tag-lost','Nurture':'tag-nurture'};
-return m[s]||'';
-}
+function stageTagClass(s){const m={'Prospect':'tag-prospect','Contacted':'tag-contacted','Responded':'tag-contacted','Discovery Call':'tag-call','Audit in Progress':'tag-call','Proposal Sent':'tag-proposal','Negotiation':'tag-proposal','Closed Won':'tag-closed','Closed Lost':'tag-lost','Nurture':'tag-nurture'};return m[s]||'';}
 
 function addLead(){
 const company=document.getElementById('fCompany').value.trim();
 const name=document.getElementById('fName').value.trim();
 if(!name&&!company){showToast('Enter at least a name or company');return;}
-const lead={id:Date.now(),company,name,title:document.getElementById('fTitle').value.trim(),email:document.getElementById('fEmail').value.trim(),linkedin:document.getElementById('fLinkedin').value.trim(),industry:document.getElementById('fIndustry').value.trim(),employees:document.getElementById('fEmployees').value,revenue:document.getElementById('fRevenue').value,location:document.getElementById('fLocation').value.trim(),score:document.getElementById('fScore').value||5,stage:document.getElementById('fStage').value,value:document.getElementById('fValue').value||0,source:document.getElementById('fSource').value,website:document.getElementById('fWebsite').value.trim(),emailStepNum:0,emailStep:'waiting',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};
-leads.push(lead);save();log(`Added ${name||company} to ${lead.stage}`);showToast(`Added ${name||company}`);clearForm();renderDashboard();renderPipeline();renderLeadsTable();navigate('leads');
+const lead={id:Date.now(),company,name,title:document.getElementById('fTitle').value.trim(),email:document.getElementById('fEmail').value.trim(),linkedin:document.getElementById('fLinkedin').value.trim(),industry:document.getElementById('fIndustry').value.trim(),employees:document.getElementById('fEmployees').value,revenue:document.getElementById('fRevenue').value,location:document.getElementById('fLocation').value.trim(),score:document.getElementById('fScore').value||5,stage:document.getElementById('fStage').value,value:document.getElementById('fValue').value||0,source:document.getElementById('fSource').value,website:document.getElementById('fWebsite').value.trim(),emailStepNum:0,emailStep:'waiting',notes:document.getElementById('fNotes').value.trim(),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};
+leads.push(lead);save();log(`Added ${name||company} to ${lead.stage}`);showToast(`Added ${name||company}`);clearForm();renderAll();navigate('leads');
 }
 
 function clearForm(){document.querySelectorAll('#page-add input,#page-add select').forEach(e=>{if(e.type==='number'&&e.id==='fScore')e.value='5';else if(e.type==='number')e.value='';else e.value=''});}
 
-function deleteLead(id){if(!confirm('Delete this lead?'))return;const l=leads.find(x=>x.id===id);leads=leads.filter(x=>x.id!==id);save();log(`Deleted ${l?.name||'lead'}`);showToast('Lead deleted');renderDashboard();renderPipeline();renderLeadsTable();}
+function deleteLead(id){if(!confirm('Delete this lead?'))return;const l=leads.find(x=>x.id===id);leads=leads.filter(x=>x.id!==id);save();log(`Deleted ${l?.name||'lead'}`);showToast('Lead deleted');renderAll();closeModal();}
 
 function openLead(id){
 const l=leads.find(x=>x.id===id);if(!l)return;
+const notes=(l.notes||'').split('\n').filter(Boolean).map(n=>`<div class="note-item"><span>${esc(n)}</span></div>`).join('')||'<div style="color:#b0b0c8;font-size:0.85rem">No notes</div>';
 const m=document.getElementById('modalContent');
-m.innerHTML=`<h2>Edit Lead</h2>
+m.innerHTML=`<h2>${esc(l.name||'Unknown')} · ${esc(l.company||'')}</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;font-size:0.85rem;color:#5a5a7a">
+<div><strong>Stage:</strong> <span class="tag ${stageTagClass(l.stage)}">${l.stage}</span></div>
+<div><strong>Created:</strong> ${new Date(l.createdAt).toLocaleDateString()}</div>
+<div><strong>Days in stage:</strong> ${daysSince(l.updatedAt)}d</div>
+<div><strong>Email step:</strong> ${l.emailStepNum>0?`${EMAIL_TEMPLATES[l.emailStepNum-1]}`:'Not started'}</div>
+<div><strong>Score:</strong> ${l.score||'-'}/10</div>
+<div><strong>Value:</strong> ${l.value?`$${(+l.value).toLocaleString()}`:'-'}</div>
+</div>
 <div class="form-grid">
 <div class="form-group"><label>Company</label><input id="mCompany" value="${esc(l.company||'')}"/></div>
 <div class="form-group"><label>Name</label><input id="mName" value="${esc(l.name||'')}"/></div>
@@ -298,10 +440,14 @@ m.innerHTML=`<h2>Edit Lead</h2>
 <div class="form-group"><label>Stage</label><select id="mStage">${STAGES.map(s=>`<option ${s===l.stage?'selected':''}>${s}</option>`).join('')}</select></div>
 <div class="form-group"><label>Value ($)</label><input id="mValue" type="number" value="${l.value||0}"/></div>
 <div class="form-group"><label>Score (1-10)</label><input id="mScore" type="number" min="1" max="10" value="${l.score||5}"/></div>
+<div class="form-group"><label>Email Step</label><select id="mEmailStep">${EMAIL_TEMPLATES.map((t,i)=>`<option value="${i+1}" ${l.emailStepNum===i+1?'selected':''}>${t}</option>`).join('')}<option value="0" ${!l.emailStepNum?'selected':''}>Not started</option></select></div>
 <div class="form-group"><label>Industry</label><input id="mIndustry" value="${esc(l.industry||'')}"/></div>
 <div class="form-group"><label>Location</label><input id="mLocation" value="${esc(l.location||'')}"/></div>
 <div class="form-group"><label>Source</label><select id="mSource"><option value="">Select...</option>${['Referral','LinkedIn','Cold Email','Partner','Website','Other'].map(s=>`<option ${s===l.source?'selected':''}>${s}</option>`).join('')}</select></div>
+<div class="form-group" style="grid-column:1/-1"><label>Notes</label><textarea id="mNotes" rows="3" style="font-family:'Inter',sans-serif;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:0.9rem;outline:none;width:100%;resize:vertical">${esc(l.notes||'')}</textarea></div>
 </div>
+<h3 style="font-size:0.9rem;margin:16px 0 8px;color:#4a4a6a">Notes Timeline</h3>
+${notes}
 <div class="modal-actions">
 <button class="btn btn-success" onclick="saveLead(${l.id})">Save</button>
 <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
@@ -312,28 +458,117 @@ document.getElementById('modalOverlay').style.display='flex';
 
 function saveLead(id){
 const l=leads.find(x=>x.id===id);if(!l)return;
-l.company=document.getElementById('mCompany').value.trim();l.name=document.getElementById('mName').value.trim();l.title=document.getElementById('mTitle').value.trim();l.email=document.getElementById('mEmail').value.trim();const oldStage=l.stage;l.stage=document.getElementById('mStage').value;l.value=document.getElementById('mValue').value;l.score=document.getElementById('mScore').value;l.industry=document.getElementById('mIndustry').value.trim();l.location=document.getElementById('mLocation').value.trim();l.source=document.getElementById('mSource').value;l.updatedAt=new Date().toISOString();
-save();log(`Updated ${l.name||l.company}${oldStage!==l.stage?` (${oldStage} → ${l.stage})`:''}`);showToast('Saved');closeModal();renderDashboard();renderPipeline();renderLeadsTable();
+l.company=document.getElementById('mCompany').value.trim();l.name=document.getElementById('mName').value.trim();l.title=document.getElementById('mTitle').value.trim();l.email=document.getElementById('mEmail').value.trim();const oldStage=l.stage;l.stage=document.getElementById('mStage').value;l.value=document.getElementById('mValue').value;l.score=document.getElementById('mScore').value;l.industry=document.getElementById('mIndustry').value.trim();l.location=document.getElementById('mLocation').value.trim();l.source=document.getElementById('mSource').value;const newNotes=document.getElementById('mNotes').value.trim();const oldNotes=l.notes||'';
+const es=document.getElementById('mEmailStep').value;l.emailStepNum=parseInt(es);l.emailStep=l.emailStepNum>0?'sent':'waiting';
+if(newNotes!==oldNotes){const ts=new Date().toLocaleString();l.notes=(oldNotes?oldNotes+'\n':'')+'['+ts+'] '+newNotes.replace(oldNotes,'').trim();log(`Updated notes for ${l.name||l.company}`);}
+l.updatedAt=new Date().toISOString();
+save();log(`Updated ${l.name||l.company}${oldStage!==l.stage?` (${oldStage} → ${l.stage})`:''}`);showToast('Saved');closeModal();renderAll();
 }
 
 function closeModal(){document.getElementById('modalOverlay').style.display='none';}
 
-function showLeadsView(v){document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');document.getElementById('leadsTableView').style.display=v==='table'?'block':'none';document.getElementById('leadsCardsView').style.display=v==='cards'?'grid':'none';}
+function showLeadsView(v){
+document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
+event.target.classList.add('active');
+document.getElementById('leadsTableView').style.display=v==='table'?'block':'none';
+document.getElementById('leadsCardsView').style.display=v==='cards'?'grid':'none';
+if(v==='cards')renderLeadsTable();
+}
 
-function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function renderEmailSeq(){
+const table=document.getElementById('emailSeqTable');
+const active=leads.filter(l=>!['Closed Won','Closed Lost','Nurture'].includes(l.stage));
+table.innerHTML=`<table><thead><tr><th>Name</th><th>Company</th><th>Stage</th><th>Email Step</th><th>Next Template</th><th>Action</th></tr></thead><tbody>${active.map(l=>{
+const step=l.emailStepNum||0;
+const nextIdx=step>=7?'Complete':EMAIL_TEMPLATES[step];
+return`<tr>
+<td><strong>${esc(l.name||'-')}</strong></td>
+<td>${esc(l.company||'-')}</td>
+<td><span class="tag ${stageTagClass(l.stage)}">${l.stage}</span></td>
+<td>${step}/7 <span class="email-step ${step>0?'sent':''}">${step>0?EMAIL_TEMPLATES[step-1].split('—')[0]:'Not sent'}</span></td>
+<td>${step>=7?'<span class="badge badge-won">Complete</span>':`<span class="email-step waiting">${EMAIL_TEMPLATES[step].split('—')[0]}</span>`}</td>
+<td>${step<7?`<button class="btn btn-sm btn-primary" onclick="advanceEmail(${l.id})">Send Next</button>`:'<span class="badge badge-won">Done</span>'}</td>
+</tr>`}).join('')}</tbody></table>`;
+if(!active.length)table.innerHTML=`<div class="empty-state"><h3>No active leads</h3><p>Add leads to start tracking email sequences.</p></div>`;
+}
+
+function advanceEmail(id){
+const l=leads.find(x=>x.id===id);if(!l)return;
+l.emailStepNum=Math.min(7,(l.emailStepNum||0)+1);
+l.emailStep=l.emailStepNum>0?'sent':'waiting';
+l.updatedAt=new Date().toISOString();
+save();log(`Advanced ${l.name||l.company} to ${EMAIL_TEMPLATES[l.emailStepNum-1]||'complete'}`);
+showToast(`${l.name||l.company}: ${EMAIL_TEMPLATES[l.emailStepNum-1]||'Sequence complete'}`);
+renderEmailSeq();renderAll();
+}
+
+function esc(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 
 function exportCSV(){
-const headers=['Name','Company','Title','Email','Stage','Value','Score','Industry','Location','Source','Website','LinkedIn','Created'];
-const rows=leads.map(l=>[l.name||'',l.company||'',l.title||'',l.email||'',l.stage,l.value||0,l.score||'',l.industry||'',l.location||'',l.source||'',l.website||'',l.linkedin||'',l.createdAt?new Date(l.createdAt).toLocaleDateString():'']);
+const headers=['Name','Company','Title','Email','Stage','Value','Score','Industry','Location','Source','Website','LinkedIn','Email Step','Notes','Created'];
+const rows=leads.map(l=>[l.name||'',l.company||'',l.title||'',l.email||'',l.stage,l.value||0,l.score||'',l.industry||'',l.location||'',l.source||'',l.website||'',l.linkedin||'',l.emailStepNum||0,l.notes||'',l.createdAt?new Date(l.createdAt).toLocaleDateString():'']);
 const csv=[headers.join(','),...rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(','))].join('\n');
 const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='pipeline-growth-leads.csv';a.click();URL.revokeObjectURL(a.href);showToast('CSV downloaded');
 }
 
 function exportClipboard(){
-const headers=['Name','Company','Title','Email','Stage','Value','Score','Industry','Location','Source'];
-const rows=leads.map(l=>[l.name||'',l.company||'',l.title||'',l.email||'',l.stage,l.value||0,l.score||'',l.industry||'',l.location||'',l.source||'']);
+const headers=['Name','Company','Title','Email','Stage','Value','Score','Industry','Location','Source','Notes'];
+const rows=leads.map(l=>[l.name||'',l.company||'',l.title||'',l.email||'',l.stage,l.value||0,l.score||'',l.industry||'',l.location||'',l.source||'',l.notes||'']);
 const tsv=[headers.join('\t'),...rows.map(r=>r.join('\t'))].join('\n');
 navigator.clipboard.writeText(tsv).then(()=>showToast('Copied to clipboard')).catch(()=>showToast('Failed to copy'));
+}
+
+function handleDrop(e){
+e.preventDefault();document.getElementById('dropArea').classList.remove('dragover');
+const file=e.dataTransfer.files[0];if(file)parseCSV(file);
+}
+
+function handleFile(file){if(file)parseCSV(file);}
+
+function parseCSV(file){
+const reader=new FileReader();
+reader.onload=function(e){
+const text=e.target.result;const lines=text.split('\n').filter(l=>l.trim());
+if(lines.length<2){showToast('CSV must have a header row and at least one data row');return;}
+const headers=lines[0].split(',').map(h=>h.replace(/"/g,'').trim().toLowerCase());
+const nameIdx=headers.findIndex(h=>h==='name'||h==='contact name'||h==='contact');
+const companyIdx=headers.findIndex(h=>h==='company'||h==='company name');
+const emailIdx=headers.findIndex(h=>h==='email');
+const stageIdx=headers.findIndex(h=>h==='stage');
+const valueIdx=headers.findIndex(h=>h==='value'||h==='pipeline value'||h==='pipeline value ($)');
+const scoreIdx=headers.findIndex(h=>h==='score'||h==='priority score');
+const industryIdx=headers.findIndex(h=>h==='industry');
+const locationIdx=headers.findIndex(h=>h==='location');
+const sourceIdx=headers.findIndex(h=>h==='source'||h==='lead source');
+const notesIdx=headers.findIndex(h=>h==='notes');
+if(companyIdx===-1&&nameIdx===-1){showToast('CSV must have at least "Company" or "Name" column');return;}
+let imported=0;
+for(let i=1;i<lines.length;i++){
+const vals=lines[i].split(',').map(v=>v.replace(/"/g,'').trim());
+const company=companyIdx>=0?vals[companyIdx]||'':'';
+const name=nameIdx>=0?vals[nameIdx]||'':'';
+if(!company&&!name)continue;
+const stage=stageIdx>=0?vals[stageIdx]:'Prospect';
+if(!STAGES.includes(stage))continue;
+const lead={id:Date.now()+i+Math.random()*10000|0,company,name,title:'',email:emailIdx>=0?vals[emailIdx]||'':'',linkedin:'',industry:industryIdx>=0?vals[industryIdx]||'':'',employees:'',revenue:'',location:locationIdx>=0?vals[locationIdx]||'':'',score:scoreIdx>=0?parseInt(vals[scoreIdx])||5:5,stage:stage,value:valueIdx>=0?parseFloat(vals[valueIdx])||0:0,source:sourceIdx>=0?vals[sourceIdx]||'':'',website:'',emailStepNum:0,emailStep:'waiting',notes:notesIdx>=0?vals[notesIdx]||'':'',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};
+leads.push(lead);imported++;
+}
+save();log(`Imported ${imported} leads from CSV`);showToast(`Imported ${imported} leads`);renderAll();
+document.getElementById('importPreview').innerHTML=`<div class="stat-card"><h3 style="font-size:1rem;margin-bottom:8px;color:#22c55e">✓ Import Complete</h3><p style="color:#5a5a7a">${imported} leads imported. <a href="#" onclick="navigate('leads');return false" style="color:#2563eb">View leads</a></p></div>`;
+};
+reader.readAsText(file);
+}
+
+function reloadDemoData(){
+if(!confirm('Replace all current leads with the 12 demo leads?'))return;
+const now=new Date().toISOString();
+const seedData=leads;const origId=1001;
+const preserved=JSON.parse(JSON.stringify(leads.filter(l=>l.id<100||l.id>2000)));
+leads=preserved;
+const now2=new Date().toISOString();
+const demo=[{id:1001,company:'Cognosis Consulting',name:'Peter Smith',title:'CEO',email:'peter@cognosis.co.uk',linkedin:'linkedin.com/in/petersmith',industry:'Growth Strategy Consulting',employees:40,revenue:'$5M - $10M',location:'London, UK',score:9,stage:'Discovery Call',value:42000,source:'LinkedIn',website:'cognosis.co.uk',emailStepNum:3,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1002,company:'Magnus Consulting',name:'Sarah Chen',title:'Managing Director',email:'sarah@magnusconsulting.co.uk',linkedin:'linkedin.com/in/sarachen',industry:'B2B Growth Consulting',employees:28,revenue:'$1M - $5M',location:'Manchester, UK',score:8,stage:'Responded',value:35000,source:'Referral',website:'magnusconsulting.co.uk',emailStepNum:2,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1003,company:'Meraki People',name:'Kate Smyth',title:'Founder & Principal',email:'kate@merakipeople.co.uk',linkedin:'linkedin.com/in/katesmyth',industry:'Board Advisory',employees:12,revenue:'$1M - $5M',location:'London, UK',score:7,stage:'Prospect',value:24000,source:'Cold Email',website:'merakipeople.co.uk',emailStepNum:0,emailStep:'waiting',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1004,company:'THRIVE Consulting',name:'Eliette Krakora',title:'Founder & CEO',email:'eliette@thrive-co.com',linkedin:'linkedin.com/in/eliettekrakora',industry:'Healthcare Strategy',employees:4,revenue:'$1M - $5M',location:'Los Angeles, CA',score:6,stage:'Prospect',value:18000,source:'LinkedIn',website:'thrive-co.com',emailStepNum:0,emailStep:'waiting',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1005,company:'Rhodes Perry Consulting',name:'Rhodes Perry',title:'Founder & CEO',email:'rhodes@rhodesperryconsulting.com',linkedin:'linkedin.com/in/rhodesperry',industry:'DEI Consulting',employees:1,revenue:'$1M - $5M',location:'Portland, OR',score:5,stage:'Prospect',value:12000,source:'Cold Email',website:'rhodesperryconsulting.com',emailStepNum:0,emailStep:'waiting',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1006,company:'Yeager Marketing',name:'Renee Yeager',title:'CEO & Co-Founder',email:'renee@yeagermarketing.com',linkedin:'linkedin.com/in/reneeyeager',industry:'B2B Tech Marketing',employees:11,revenue:'$1M - $5M',location:'Scottsdale, AZ',score:8,stage:'Contacted',value:30000,source:'Website',website:'yeagermarketing.com',emailStepNum:1,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1007,company:'Mix+Shine Marketing',name:'Rachael Seda',title:'CEO & Co-Founder',email:'rachael@mixshinemarketing.com',linkedin:'linkedin.com/in/rachaelseda',industry:'Growth Marketing',employees:13,revenue:'$1M - $5M',location:'Virginia Beach, VA',score:7,stage:'Contacted',value:28000,source:'LinkedIn',website:'mixshinemarketing.com',emailStepNum:1,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1008,company:'Disruptive Digital',name:'Maurice Rahmey',title:'CEO',email:'maurice@disruptivedigital.com',linkedin:'linkedin.com/in/mauricerahmey',industry:'Performance Marketing',employees:15,revenue:'$5M - $10M',location:'New York, NY',score:6,stage:'Audit in Progress',value:55000,source:'Partner',website:'disruptivedigital.com',emailStepNum:4,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1009,company:'qb. consulting',name:'Sam Hartsock',title:'Strategy Lead',email:'sam@consultqb.com',linkedin:'linkedin.com/in/samhartsock',industry:'ESG Strategy Consulting',employees:5,revenue:'$1M - $5M',location:'Austin, TX',score:7,stage:'Proposal Sent',value:36000,source:'Cold Email',website:'consultqb.com',emailStepNum:4,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1010,company:'Vitreum Consulting',name:'Debi Wilson',title:'Founder & Director',email:'debi@vitreumconsulting.co.uk',linkedin:'linkedin.com/in/debiwilson',industry:'HR & Operations Consulting',employees:6,revenue:'$1M - $5M',location:'Birmingham, UK',score:5,stage:'Nurture',value:15000,source:'Referral',website:'vitreumconsultingltd.co.uk',emailStepNum:2,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1011,company:'Velocity Consulting',name:'James Mitchell',title:'Managing Partner',email:'james@velocityconsult.com',linkedin:'linkedin.com/in/jamesmitchell',industry:'Management Consulting',employees:35,revenue:'$5M - $10M',location:'Chicago, IL',score:9,stage:'Negotiation',value:72000,source:'Referral',website:'velocityconsult.com',emailStepNum:5,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2},{id:1012,company:'Summit Strategy',name:'Lisa Park',title:'CEO',email:'lisa@summitstrategy.io',linkedin:'linkedin.com/in/lisapark',industry:'Strategy Consulting',employees:22,revenue:'$5M - $10M',location:'San Francisco, CA',score:8,stage:'Discovery Call',value:48000,source:'LinkedIn',website:'summitstrategy.io',emailStepNum:2,emailStep:'sent',notes:'Demo lead',createdAt:now2,updatedAt:now2}];
+leads=leads.concat(demo);
+save();log('Reloaded demo data');showToast('Demo data loaded');renderAll();navigate('leads');
 }
 
 navigate('dashboard');
